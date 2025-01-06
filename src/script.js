@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const carouselInner = document.querySelector(".carousel-inner");
 
+  // Fetch Characters
   const fetchAndRenderCharacters = async () => {
     try {
       const response = await fetch("https://rickandmortyapi.com/api/character?page=1");
       const data = await response.json();
-      const characters = data.results.slice(0, 30); 
-
+      const characters = data.results.slice(0, 20);
 
       carouselInner.innerHTML = "";
 
@@ -17,10 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
       currentItem.innerHTML = `<div class="row"></div>`;
       carouselInner.appendChild(currentItem);
 
+      // Create a Card for each character
       characters.forEach((char, index) => {
         const charCard = `
-          <div class="col-12 col-md-4 ">
-            <div class="card "  style="cursor: pointer;">
+          <div class="col-12 col-md-4">
+            <div class="card" style="cursor: pointer;">
               <img src="${char.image}" class="card-img-top" alt="${char.name}" data-bs-toggle="modal" data-bs-target="#characterModal" data-character-id="${char.id}">
               <div class="card-body text-center text-truncate">
                 <h5 class="card-title">${char.name}</h5>
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const row = currentItem.querySelector(".row");
         row.innerHTML += charCard;
 
-       
+        // Mobile 1 card and Web 3 cards (Responsive)
         const itemsPerSlide = isMobile ? 1 : 3;
         if ((index + 1) % itemsPerSlide === 0 && index + 1 < characters.length) {
           currentItem = document.createElement("div");
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-
+      // Open Modal
       const characterImages = document.querySelectorAll('[data-bs-toggle="modal"]');
       characterImages.forEach(image => {
         image.addEventListener("click", async (event) => {
@@ -52,13 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
           displayCharacterDetails(characterData);
         });
       });
-
     } catch (error) {
       console.error("Error fetching API data:", error);
     }
   };
 
-  // Details api rest
+  // Fetch character details
   const fetchCharacterDetails = async (characterId) => {
     try {
       const response = await fetch(`https://rickandmortyapi.com/api/character/${characterId}`);
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Show on modal
+  // Show character details on modal
   const displayCharacterDetails = (character) => {
     const modalContent = document.getElementById("modalCharacterDetails");
     modalContent.innerHTML = `
@@ -82,10 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   };
 
-
   fetchAndRenderCharacters();
 
-  // Dinamic Responsive
+  // Responsive on resize
   window.addEventListener("resize", () => {
     fetchAndRenderCharacters();
   });

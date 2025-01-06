@@ -46,7 +46,7 @@
 </div>
 <div align='center'>
   <b>💗 Pagina web Rick&Morty 🌍</b>
-    <a href="https://coallytest.netlify.app/">[ Link a CoallyTest ]</a>
+    <a href="https://lfitest.netlify.app/">[ Link a lfiTest ]</a>
 </div>
 
 <br>
@@ -59,7 +59,8 @@
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) 
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
 
   </div>
 
