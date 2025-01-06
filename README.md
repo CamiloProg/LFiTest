@@ -82,9 +82,5 @@ Clonar el repositorio
 [https://github.com/CamiloProg/coallyBack.git](https://github.com/CamiloProg/LFiTest.git)
 
 
-Abrir pagina web:
-
--Ingresar a la carpeta "src"
-
--Clickear en index.html
+Para abrir la pagina web, entra a la carpeta creada y clickea en "index.html"
 </div>
