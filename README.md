@@ -85,5 +85,6 @@ Clonar el repositorio
 Abrir pagina web:
 
 -Ingresar a la carpeta "src"
+
 -Clickear en index.html
 </div>
