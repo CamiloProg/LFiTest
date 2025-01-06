@@ -1,0 +1,22 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+.hero-img {
+  max-height: 50vh;
+  width: 100%;
+  object-fit: cover;
+}
+.card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s;
+}
